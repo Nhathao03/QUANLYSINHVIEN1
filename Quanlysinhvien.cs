@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -55,46 +57,11 @@ namespace QUANLYSINHVIEN1
         }
         private void Quanlysinhvien_Load(object sender, EventArgs e)
         {
-            List<Student> stu = db.Students.ToList();
+            List<Student> stu = db.Students.OrderBy(x => x.CreatedDate).ToList();
             List<Faculty> fac = db.Faculties.ToList();
             hienthiDS(stu);
             hienthiCombobox(fac);
             cmbkhoa.SelectedIndex = 0;
-            /*
-            //luôn luôn sử dụng context để làm việc với các class
-            DATASINHVIEN context = new DATASINHVIEN();
-            //1. lấy tất cả các sinh viên từ bảng Student
-            List<Student> listStudent = context.Students.ToList();
-            //2. lấy sinh viên đầu tiên có StudentID = ID cho trước
-            Student db = context.Students.FirstOrDefault(p => p.StudentID == ID);
-            //3. insert 1 đối tượng sinh viên s vào database
-            Student s = new Student()
-            {
-                StudentID = "99",
-                FullName = "test insert",
-                AverageScore
-            = 100
-            };
-            context.Students.Add(s);
-            context.SaveChanges();
-            //4. Update sinh viên -> lấy item ra và cần update thuộc tính nào thì set thuộc tinh đó
-            Student dbUpdate = context.Students.FirstOrDefault(p => p.StudentID == ID);
-            if (dbUpdate != null)
-            {
-                dbUpdate.FullName = "Update FullName"; //....
-                context.SaveChanges(); //lưu thay đổi
-            }
-            //5. Xóa Student có ID cho trước , tương tự update
-            Student dbDelete = context.Students.FirstOrDefault(p => p.StudentID == ID);
-            if (dbDelete != null)
-            {
-                context.Students.Remove(db);
-                context.SaveChanges(); // lưu thay dổi
-            }
-            //6. Lưu ý: Nếu sử dụng using System.Data.Entity.Migrations; có thể sử dụng hàm AddOrUpdate để thay thế Add và Update từ EntityFrameWork 6.0.0.0
-            context.Students.AddOrUpdate(s); //Add or Update sinh viên s
-            context.SaveChanges();*/
-
         }
 
         private void btnthoat_Click(object sender, EventArgs e)
@@ -124,6 +91,18 @@ namespace QUANLYSINHVIEN1
                 MessageBox.Show("Mã số sinh viên phải có từ 3 đến 100 ký tự");
                 return false;
             }
+            if (cmbkhoa.Text == "")
+            {
+                MessageBox.Show("Vui lòng chọn khoa cho sinh viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cmbkhoa.Focus();
+                return false;
+            }
+            if (txtdtb.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập điểm trung bình cho sinh viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtdtb.Focus();
+                return false;
+            }
             return true;
         }
 
@@ -134,7 +113,24 @@ namespace QUANLYSINHVIEN1
             {
                 return;
             }
+
+            Student student = new Student();
+            student.StudentID = txtmssv.Text;
+            student.FullName = txthoten.Text;
+            student.FacultyID = Convert.ToInt32(cmbkhoa.SelectedValue);
+            student.AverageScore = Convert.ToDouble(txtdtb.Text);
+            student.CreatedDate = DateTime.Now;
+
+            db.Students.Add(student);
+            db.SaveChanges();
+
+            MessageBox.Show("Thêm dữ liệu thành công !");
+            List<Student> stu = db.Students.OrderBy(x => x.CreatedDate).ToList();
+            dgvdata.Rows.Clear();
+            dgvdata.Refresh();
+            hienthiDS(stu);
         }
+
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -146,6 +142,74 @@ namespace QUANLYSINHVIEN1
         {
             Timkiem f3 = new Timkiem();
             f3.ShowDialog();
+        }
+
+        private void cmbkhoa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnxoa_Click(object sender, EventArgs e)
+        {
+            var st = db.Students.FirstOrDefault(x => x.StudentID == txtmssv.Text);
+
+            if (st == null)
+            {
+                MessageBox.Show("Không tìm thấy mã số sinh viên cần xóa!");
+            }
+            else
+            {
+                db.Students.Remove(st);
+                db.SaveChanges();
+                MessageBox.Show("Đã xóa dữ liệu thành công !");
+                List<Student> stu = db.Students.OrderBy(x => x.CreatedDate).ToList();
+                dgvdata.Rows.Clear();
+                dgvdata.Refresh();
+                hienthiDS(stu);
+                
+            }
+        }
+
+        private void btnsua_Click(object sender, EventArgs e)
+        {
+            var st = db.Students.FirstOrDefault(x => x.StudentID == txtmssv.Text);
+
+            if (st == null)
+            {
+                MessageBox.Show("Không tìm thấy mã số sinh viên cần sửa!");
+            }
+            else
+            {
+                if(btnsua.Text == "Sửa")
+                {
+                    // tai thong tin len textbox
+                    txtmssv.Text = st.StudentID.ToString();
+                    txthoten.Text = st.FullName.ToString();
+                    cmbkhoa.SelectedValue = st.FacultyID;
+                    txtdtb.Text = st.AverageScore.ToString();
+
+                    btnsua.Text = "Hoàn thành";
+                }
+                else
+                {
+                    // luu vao db
+                    st.StudentID = txtmssv.Text;
+                    st.FullName = txthoten.Text;
+                    st.FacultyID = Convert.ToInt32(cmbkhoa.SelectedValue);
+                    st.AverageScore = Convert.ToDouble(txtdtb.Text);
+                    st.CreatedDate = DateTime.Now;
+                    db.SaveChanges();
+
+                    btnsua.Text = "Sửa";
+                    MessageBox.Show("Sửa thành công !");
+
+                    List<Student> stu = db.Students.OrderBy(x => x.CreatedDate).ToList();
+                    dgvdata.Rows.Clear();
+                    dgvdata.Refresh();
+                    hienthiDS(stu);
+                }
+
+            }
         }
     }
 }

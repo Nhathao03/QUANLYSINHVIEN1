@@ -75,36 +75,43 @@ namespace QUANLYSINHVIEN1
             this.groupBox1.Controls.Add(this.lblhoten);
             this.groupBox1.Controls.Add(this.lblmssv);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.groupBox1.Location = new System.Drawing.Point(12, 78);
+            this.groupBox1.Location = new System.Drawing.Point(16, 96);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(211, 360);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(281, 443);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin sinh viên";
             // 
             // btnxoa
             // 
-            this.btnxoa.Location = new System.Drawing.Point(15, 331);
+            this.btnxoa.Location = new System.Drawing.Point(20, 407);
+            this.btnxoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnxoa.Name = "btnxoa";
-            this.btnxoa.Size = new System.Drawing.Size(157, 23);
+            this.btnxoa.Size = new System.Drawing.Size(209, 28);
             this.btnxoa.TabIndex = 11;
             this.btnxoa.Text = "Xoá";
             this.btnxoa.UseVisualStyleBackColor = true;
+            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
             // 
             // btnsua
             // 
-            this.btnsua.Location = new System.Drawing.Point(96, 264);
+            this.btnsua.Location = new System.Drawing.Point(128, 325);
+            this.btnsua.Margin = new System.Windows.Forms.Padding(4);
             this.btnsua.Name = "btnsua";
-            this.btnsua.Size = new System.Drawing.Size(75, 43);
+            this.btnsua.Size = new System.Drawing.Size(100, 53);
             this.btnsua.TabIndex = 10;
             this.btnsua.Text = "Sửa";
             this.btnsua.UseVisualStyleBackColor = true;
+            this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
             // 
             // btnthem
             // 
-            this.btnthem.Location = new System.Drawing.Point(15, 264);
+            this.btnthem.Location = new System.Drawing.Point(20, 325);
+            this.btnthem.Margin = new System.Windows.Forms.Padding(4);
             this.btnthem.Name = "btnthem";
-            this.btnthem.Size = new System.Drawing.Size(75, 43);
+            this.btnthem.Size = new System.Drawing.Size(100, 53);
             this.btnthem.TabIndex = 9;
             this.btnthem.Text = "Thêm";
             this.btnthem.UseVisualStyleBackColor = true;
@@ -119,75 +126,85 @@ namespace QUANLYSINHVIEN1
             "Quản trị kinh doanh",
             "Kế toán",
             "Công nghệ ô tô"});
-            this.cmbkhoa.Location = new System.Drawing.Point(68, 159);
+            this.cmbkhoa.Location = new System.Drawing.Point(91, 196);
+            this.cmbkhoa.Margin = new System.Windows.Forms.Padding(4);
             this.cmbkhoa.Name = "cmbkhoa";
-            this.cmbkhoa.Size = new System.Drawing.Size(123, 21);
+            this.cmbkhoa.Size = new System.Drawing.Size(163, 24);
             this.cmbkhoa.TabIndex = 8;
+            this.cmbkhoa.SelectedIndexChanged += new System.EventHandler(this.cmbkhoa_SelectedIndexChanged);
             // 
             // txtdtb
             // 
-            this.txtdtb.Location = new System.Drawing.Point(68, 219);
+            this.txtdtb.Location = new System.Drawing.Point(91, 270);
+            this.txtdtb.Margin = new System.Windows.Forms.Padding(4);
             this.txtdtb.Name = "txtdtb";
-            this.txtdtb.Size = new System.Drawing.Size(123, 20);
+            this.txtdtb.Size = new System.Drawing.Size(163, 22);
             this.txtdtb.TabIndex = 7;
             // 
             // txthoten
             // 
-            this.txthoten.Location = new System.Drawing.Point(68, 108);
+            this.txthoten.Location = new System.Drawing.Point(91, 133);
+            this.txthoten.Margin = new System.Windows.Forms.Padding(4);
             this.txthoten.Name = "txthoten";
-            this.txthoten.Size = new System.Drawing.Size(123, 20);
+            this.txthoten.Size = new System.Drawing.Size(163, 22);
             this.txthoten.TabIndex = 5;
             // 
             // txtmssv
             // 
-            this.txtmssv.Location = new System.Drawing.Point(68, 55);
+            this.txtmssv.Location = new System.Drawing.Point(91, 68);
+            this.txtmssv.Margin = new System.Windows.Forms.Padding(4);
             this.txtmssv.Name = "txtmssv";
-            this.txtmssv.Size = new System.Drawing.Size(123, 20);
+            this.txtmssv.Size = new System.Drawing.Size(163, 22);
             this.txtmssv.TabIndex = 4;
             // 
             // lbldtb
             // 
             this.lbldtb.AutoSize = true;
-            this.lbldtb.Location = new System.Drawing.Point(12, 219);
+            this.lbldtb.Location = new System.Drawing.Point(16, 270);
+            this.lbldtb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbldtb.Name = "lbldtb";
-            this.lbldtb.Size = new System.Drawing.Size(48, 13);
+            this.lbldtb.Size = new System.Drawing.Size(59, 16);
             this.lbldtb.TabIndex = 3;
             this.lbldtb.Text = "Điểm TB";
             // 
             // lblkhoa
             // 
             this.lblkhoa.AutoSize = true;
-            this.lblkhoa.Location = new System.Drawing.Point(12, 168);
+            this.lblkhoa.Location = new System.Drawing.Point(16, 207);
+            this.lblkhoa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblkhoa.Name = "lblkhoa";
-            this.lblkhoa.Size = new System.Drawing.Size(32, 13);
+            this.lblkhoa.Size = new System.Drawing.Size(38, 16);
             this.lblkhoa.TabIndex = 2;
             this.lblkhoa.Text = "Khoa";
             // 
             // lblhoten
             // 
             this.lblhoten.AutoSize = true;
-            this.lblhoten.Location = new System.Drawing.Point(12, 108);
+            this.lblhoten.Location = new System.Drawing.Point(16, 133);
+            this.lblhoten.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblhoten.Name = "lblhoten";
-            this.lblhoten.Size = new System.Drawing.Size(39, 13);
+            this.lblhoten.Size = new System.Drawing.Size(46, 16);
             this.lblhoten.TabIndex = 1;
             this.lblhoten.Text = "Họ tên";
             // 
             // lblmssv
             // 
             this.lblmssv.AutoSize = true;
-            this.lblmssv.Location = new System.Drawing.Point(12, 58);
+            this.lblmssv.Location = new System.Drawing.Point(16, 71);
+            this.lblmssv.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblmssv.Name = "lblmssv";
-            this.lblmssv.Size = new System.Drawing.Size(37, 13);
+            this.lblmssv.Size = new System.Drawing.Size(45, 16);
             this.lblmssv.TabIndex = 0;
             this.lblmssv.Text = "MSSV";
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.chứcNăngToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(642, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(937, 28);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -199,7 +216,7 @@ namespace QUANLYSINHVIEN1
             this.btnthoat});
             this.chứcNăngToolStripMenuItem.Name = "chứcNăngToolStripMenuItem";
             this.chứcNăngToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.chứcNăngToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.chứcNăngToolStripMenuItem.Size = new System.Drawing.Size(93, 24);
             this.chứcNăngToolStripMenuItem.Text = "Chức năng";
             // 
             // toolStripMenuItem1
@@ -207,7 +224,7 @@ namespace QUANLYSINHVIEN1
             this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(202, 26);
             this.toolStripMenuItem1.Text = "Quản lý khoa";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -216,14 +233,14 @@ namespace QUANLYSINHVIEN1
             this.tìmKiếmToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("tìmKiếmToolStripMenuItem.Image")));
             this.tìmKiếmToolStripMenuItem.Name = "tìmKiếmToolStripMenuItem";
             this.tìmKiếmToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
-            this.tìmKiếmToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tìmKiếmToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.tìmKiếmToolStripMenuItem.Text = "Tìm kiếm";
             this.tìmKiếmToolStripMenuItem.Click += new System.EventHandler(this.tìmKiếmToolStripMenuItem_Click);
             // 
             // btnthoat
             // 
             this.btnthoat.Name = "btnthoat";
-            this.btnthoat.Size = new System.Drawing.Size(180, 22);
+            this.btnthoat.Size = new System.Drawing.Size(202, 26);
             this.btnthoat.Text = "Thoát";
             this.btnthoat.Click += new System.EventHandler(this.btnthoat_Click);
             // 
@@ -235,39 +252,50 @@ namespace QUANLYSINHVIEN1
             this.dgvhoten,
             this.dgvkhoa,
             this.dgvdtb});
-            this.dgvdata.Location = new System.Drawing.Point(229, 78);
+            this.dgvdata.Location = new System.Drawing.Point(305, 96);
+            this.dgvdata.Margin = new System.Windows.Forms.Padding(4);
             this.dgvdata.Name = "dgvdata";
-            this.dgvdata.Size = new System.Drawing.Size(413, 360);
+            this.dgvdata.RowHeadersWidth = 51;
+            this.dgvdata.Size = new System.Drawing.Size(551, 443);
             this.dgvdata.TabIndex = 3;
             // 
             // dgvmssv
             // 
             this.dgvmssv.HeaderText = "MSSV";
+            this.dgvmssv.MinimumWidth = 6;
             this.dgvmssv.Name = "dgvmssv";
+            this.dgvmssv.Width = 125;
             // 
             // dgvhoten
             // 
             this.dgvhoten.HeaderText = "Họ tên";
+            this.dgvhoten.MinimumWidth = 6;
             this.dgvhoten.Name = "dgvhoten";
+            this.dgvhoten.Width = 125;
             // 
             // dgvkhoa
             // 
             this.dgvkhoa.HeaderText = "Khoa";
+            this.dgvkhoa.MinimumWidth = 6;
             this.dgvkhoa.Name = "dgvkhoa";
+            this.dgvkhoa.Width = 125;
             // 
             // dgvdtb
             // 
             this.dgvdtb.HeaderText = "Điểm TB";
+            this.dgvdtb.MinimumWidth = 6;
             this.dgvdtb.Name = "dgvdtb";
+            this.dgvdtb.Width = 125;
             // 
             // toolStrip1
             // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnquanlykhoa,
             this.btntimkiem});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 28);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(642, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(937, 27);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -276,7 +304,7 @@ namespace QUANLYSINHVIEN1
             this.btnquanlykhoa.Image = ((System.Drawing.Image)(resources.GetObject("btnquanlykhoa.Image")));
             this.btnquanlykhoa.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnquanlykhoa.Name = "btnquanlykhoa";
-            this.btnquanlykhoa.Size = new System.Drawing.Size(97, 22);
+            this.btnquanlykhoa.Size = new System.Drawing.Size(119, 24);
             this.btnquanlykhoa.Text = "Quản lý khoa";
             this.btnquanlykhoa.Click += new System.EventHandler(this.btnquanlykhoa_Click);
             // 
@@ -285,19 +313,20 @@ namespace QUANLYSINHVIEN1
             this.btntimkiem.Image = ((System.Drawing.Image)(resources.GetObject("btntimkiem.Image")));
             this.btntimkiem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btntimkiem.Name = "btntimkiem";
-            this.btntimkiem.Size = new System.Drawing.Size(76, 22);
+            this.btntimkiem.Size = new System.Drawing.Size(94, 24);
             this.btntimkiem.Text = "Tìm kiếm";
             this.btntimkiem.Click += new System.EventHandler(this.btntimkiem_Click);
             // 
             // Quanlysinhvien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(642, 450);
+            this.ClientSize = new System.Drawing.Size(937, 554);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dgvdata);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Quanlysinhvien";
             this.Text = "Quản lý sinh viên";
             this.Load += new System.EventHandler(this.Quanlysinhvien_Load);

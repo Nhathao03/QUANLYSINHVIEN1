@@ -20,7 +20,8 @@ namespace QUANLYSINHVIEN1.Model
 
         public int FacultyID { get; set; }
 
+        public DateTime CreatedDate { get; set; }
+
         public virtual Faculty Faculty { get; set; }
-        public object MSSV { get; internal set; }
     }
 }

@@ -8,7 +8,7 @@ namespace QUANLYSINHVIEN1.Model
     public partial class DATASINHVIEN : DbContext
     {
         public DATASINHVIEN()
-            : base("name=DATASINHVIEN")
+            : base("name=Quanlysinhvien")
         {
         }
 
