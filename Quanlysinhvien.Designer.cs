@@ -48,13 +48,13 @@ namespace QUANLYSINHVIEN1
             this.tìmKiếmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnthoat = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvdata = new System.Windows.Forms.DataGridView();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btnquanlykhoa = new System.Windows.Forms.ToolStripButton();
-            this.btntimkiem = new System.Windows.Forms.ToolStripButton();
             this.dgvmssv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvhoten = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvkhoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvdtb = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnquanlykhoa = new System.Windows.Forms.ToolStripButton();
+            this.btntimkiem = new System.Windows.Forms.ToolStripButton();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
@@ -204,7 +204,7 @@ namespace QUANLYSINHVIEN1
             this.chứcNăngToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1193, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1208, 28);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -259,36 +259,6 @@ namespace QUANLYSINHVIEN1
             this.dgvdata.Size = new System.Drawing.Size(893, 443);
             this.dgvdata.TabIndex = 3;
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnquanlykhoa,
-            this.btntimkiem});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 28);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1193, 27);
-            this.toolStrip1.TabIndex = 4;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // btnquanlykhoa
-            // 
-            this.btnquanlykhoa.Image = ((System.Drawing.Image)(resources.GetObject("btnquanlykhoa.Image")));
-            this.btnquanlykhoa.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnquanlykhoa.Name = "btnquanlykhoa";
-            this.btnquanlykhoa.Size = new System.Drawing.Size(119, 24);
-            this.btnquanlykhoa.Text = "Quản lý khoa";
-            this.btnquanlykhoa.Click += new System.EventHandler(this.btnquanlykhoa_Click);
-            // 
-            // btntimkiem
-            // 
-            this.btntimkiem.Image = ((System.Drawing.Image)(resources.GetObject("btntimkiem.Image")));
-            this.btntimkiem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btntimkiem.Name = "btntimkiem";
-            this.btntimkiem.Size = new System.Drawing.Size(94, 24);
-            this.btntimkiem.Text = "Tìm kiếm";
-            this.btntimkiem.Click += new System.EventHandler(this.btntimkiem_Click);
-            // 
             // dgvmssv
             // 
             this.dgvmssv.HeaderText = "MSSV";
@@ -317,11 +287,41 @@ namespace QUANLYSINHVIEN1
             this.dgvdtb.Name = "dgvdtb";
             this.dgvdtb.Width = 160;
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnquanlykhoa,
+            this.btntimkiem});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 28);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1208, 27);
+            this.toolStrip1.TabIndex = 4;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btnquanlykhoa
+            // 
+            this.btnquanlykhoa.Image = ((System.Drawing.Image)(resources.GetObject("btnquanlykhoa.Image")));
+            this.btnquanlykhoa.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnquanlykhoa.Name = "btnquanlykhoa";
+            this.btnquanlykhoa.Size = new System.Drawing.Size(119, 24);
+            this.btnquanlykhoa.Text = "Quản lý khoa";
+            this.btnquanlykhoa.Click += new System.EventHandler(this.btnquanlykhoa_Click);
+            // 
+            // btntimkiem
+            // 
+            this.btntimkiem.Image = ((System.Drawing.Image)(resources.GetObject("btntimkiem.Image")));
+            this.btntimkiem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btntimkiem.Name = "btntimkiem";
+            this.btntimkiem.Size = new System.Drawing.Size(94, 24);
+            this.btntimkiem.Text = "Tìm kiếm";
+            this.btntimkiem.Click += new System.EventHandler(this.btntimkiem_Click);
+            // 
             // Quanlysinhvien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1193, 703);
+            this.ClientSize = new System.Drawing.Size(1208, 703);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dgvdata);
             this.Controls.Add(this.groupBox1);

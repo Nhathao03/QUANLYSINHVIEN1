@@ -114,7 +114,7 @@ namespace QUANLYSINHVIEN1
             return true;
         }
 
-        //BUTTUN THÊM
+        //BUTTON THÊM
         private void btnthem_Click(object sender, EventArgs e)
         {
             if (!CheckData())
@@ -140,14 +140,14 @@ namespace QUANLYSINHVIEN1
         }
 
 
-        //BUTTUN QUẢN LÝ KHOA
+        //BUTTON QUẢN LÝ KHOA
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Quanlykhoa f2 = new Quanlykhoa();
             f2.ShowDialog();
         }
 
-        //BUTTUN TÌM KIẾM
+        //BUTTON TÌM KIẾM
         private void tìmKiếmToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Timkiem f3 = new Timkiem();
@@ -160,7 +160,7 @@ namespace QUANLYSINHVIEN1
         }
 
 
-        //BUTTUN XÓA
+        //BUTTON XÓA
         private void btnxoa_Click(object sender, EventArgs e)
         {
             var st = db.Students.FirstOrDefault(x => x.StudentID == txtmssv.Text);
@@ -182,7 +182,7 @@ namespace QUANLYSINHVIEN1
             }
         }
 
-        //BUTTUN SỬA
+        //BUTTON SỬA
         private void btnsua_Click(object sender, EventArgs e)
         {
             var st = db.Students.FirstOrDefault(x => x.StudentID == txtmssv.Text);
@@ -224,6 +224,8 @@ namespace QUANLYSINHVIEN1
 
             }
         }
+
+     
     }
 }
 

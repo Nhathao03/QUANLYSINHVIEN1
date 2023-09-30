@@ -21,11 +21,13 @@ namespace QUANLYSINHVIEN1
             db = new DATASINHVIEN();
         }
 
+        //BUTTON ĐÓNG
         private void btndong_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        //HIỂN THỊ DANH SÁCH
         private void hienthiDS(List<Faculty> facLst)
         {
             foreach (Faculty item in facLst)
@@ -37,12 +39,14 @@ namespace QUANLYSINHVIEN1
             }
         }
 
+        //FORM QUẢN LÝ KHOA
         private void Quanlykhoa_Load(object sender, EventArgs e)
         {
             List<Faculty> fac = db.Faculties.ToList();
             hienthiDS(fac);
         }
 
+        //BUTTON XÓA
         private void btnxoa_Click(object sender, EventArgs e)
         {
             var u = Convert.ToInt32(txtmakhoa.Text);
@@ -65,6 +69,7 @@ namespace QUANLYSINHVIEN1
             }
         }
 
+        //BUTTON THÊM
         private void btnthem_Click(object sender, EventArgs e)
         {
             Faculty fac = new Faculty();
@@ -83,6 +88,7 @@ namespace QUANLYSINHVIEN1
             hienthiDS(facc);
         }
 
+        //BUTTON SỬA
         private void btnsua_Click(object sender, EventArgs e)
         {
             var y = Convert.ToInt32(txtmakhoa.Text);
