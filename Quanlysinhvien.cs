@@ -25,18 +25,21 @@ namespace QUANLYSINHVIEN1
             db = new DATASINHVIEN();
         }
         
+        //SHOW FORM QUẢN LÝ KHOA
         private void btnquanlykhoa_Click(object sender, EventArgs e)
         {
             Quanlykhoa f2 = new Quanlykhoa();
             f2.ShowDialog();
         }
 
+        //SHOW FORM TÌM KIẾM
         private void btntimkiem_Click(object sender, EventArgs e)
         {
             Timkiem f3 = new Timkiem();
             f3.ShowDialog();
         }
 
+        //HÀM HIỂN THỊ DANH SÁCH 
         private void hienthiDS(List<Student> stuLst)
         {
             foreach(Student item in stuLst)
@@ -49,12 +52,15 @@ namespace QUANLYSINHVIEN1
             }
         }
 
+        //HÀM HIỂN THỊ COMBOBOX
         private void hienthiCombobox(List<Faculty> facLst)
         {
             cmbkhoa.DataSource = facLst;
             cmbkhoa.DisplayMember = "FacultyName";
             cmbkhoa.ValueMember = "FacultyID";
         }
+
+        //GỌI HÀM HIỂN THỊ FORM KHOA VÀ COMBOBOX
         private void Quanlysinhvien_Load(object sender, EventArgs e)
         {
             List<Student> stu = db.Students.OrderBy(x => x.CreatedDate).ToList();
@@ -64,6 +70,7 @@ namespace QUANLYSINHVIEN1
             cmbkhoa.SelectedIndex = 0;
         }
 
+        //BUTTTUN THOÁT
         private void btnthoat_Click(object sender, EventArgs e)
         {
             // Hiển thị hộp thoại thông báo và kiểm tra kết quả người dùng
@@ -79,6 +86,7 @@ namespace QUANLYSINHVIEN1
             }
         }
 
+        //KIỂM TRA DỮ LIỆU KHI NHẬP VÀO
          private bool CheckData()
         {
             if(string.IsNullOrEmpty(txtmssv.Text)|| string.IsNullOrEmpty(txthoten.Text) || string.IsNullOrEmpty(txtdtb.Text))
@@ -86,18 +94,18 @@ namespace QUANLYSINHVIEN1
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
                 return false;
             }
-            else if(txtmssv.TextLength <= 3 && txtmssv.TextLength > 100) 
+            if(txtmssv.TextLength < 3 && txtmssv.TextLength > 100) 
             {
                 MessageBox.Show("Mã số sinh viên phải có từ 3 đến 100 ký tự");
                 return false;
             }
-            if (cmbkhoa.Text == "")
+            if (cmbkhoa.Text == null)
             {
                 MessageBox.Show("Vui lòng chọn khoa cho sinh viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cmbkhoa.Focus();
                 return false;
             }
-            if (txtdtb.Text == "")
+            if (txtdtb.Text == null)
             {
                 MessageBox.Show("Vui lòng nhập điểm trung bình cho sinh viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtdtb.Focus();
@@ -106,7 +114,7 @@ namespace QUANLYSINHVIEN1
             return true;
         }
 
-
+        //BUTTUN THÊM
         private void btnthem_Click(object sender, EventArgs e)
         {
             if (!CheckData())
@@ -132,12 +140,14 @@ namespace QUANLYSINHVIEN1
         }
 
 
+        //BUTTUN QUẢN LÝ KHOA
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Quanlykhoa f2 = new Quanlykhoa();
             f2.ShowDialog();
         }
 
+        //BUTTUN TÌM KIẾM
         private void tìmKiếmToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Timkiem f3 = new Timkiem();
@@ -149,6 +159,8 @@ namespace QUANLYSINHVIEN1
 
         }
 
+
+        //BUTTUN XÓA
         private void btnxoa_Click(object sender, EventArgs e)
         {
             var st = db.Students.FirstOrDefault(x => x.StudentID == txtmssv.Text);
@@ -170,6 +182,7 @@ namespace QUANLYSINHVIEN1
             }
         }
 
+        //BUTTUN SỬA
         private void btnsua_Click(object sender, EventArgs e)
         {
             var st = db.Students.FirstOrDefault(x => x.StudentID == txtmssv.Text);
